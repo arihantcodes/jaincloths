@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image1 from "../../assets/"
+import Image1 from "../../assets/Image1.svg"
 import Eye from "../../assets/eye.png"
 import Eye2 from "../../assets/eye2.png"
 import { Link } from "react-router-dom";
