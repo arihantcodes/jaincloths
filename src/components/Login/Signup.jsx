@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-
+import Image2 from "../../assets/Image1.svg"
 import Eye from "../../assets/eye.png"
 import Eye2 from "../../assets/eye2.png"
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const Signup = () => {
   return (
     <div className="flex md:flex-row-reverse items-center justify-center h-screen bg-gray-100">
       <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12 hidden lg:flex flex-row-reverse">
-   
+      <img src={Image2} alt="" />
       </div>
 
       {/* Form Container */}
