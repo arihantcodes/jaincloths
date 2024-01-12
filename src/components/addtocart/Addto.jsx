@@ -164,7 +164,7 @@ function Addto() {
             </div>
 
 
-            <a
+            <div
               href="#"
               className="flex font-semibold text-indigo-600 text-sm mt-10"
             >
@@ -177,7 +177,7 @@ function Addto() {
               <Link to="/">
               Continue Shopping
               </Link>
-            </a>
+            </div>
           </div>
 
           <div id="summary" className="w-full md:w-1/4 px-4 md:px-8 py-10">

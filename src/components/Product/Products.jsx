@@ -398,8 +398,11 @@ export default function Products() {
                                   ₹{product.price}
                                 </p>
                               </div>
+                              <button className="bg-indigo-700 rounded-md font-semibold font-sans mb-4 hover:bg-indigo-500 shadow-md text-white px-8 py-2 mt-3">
+                              Add to Cart
+                            </button>
                             </div>
-                           
+                          
                           </div>
                         </div>
                       ))}
