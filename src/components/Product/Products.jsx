@@ -9,7 +9,7 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import Productxyz from "../data/Productxyz";
-import Button from "../Button";
+
 const sortOptions = [
   { name: "Most Popular", href: "#", current: true },
   { name: "Best Rating", href: "#", current: false },
@@ -399,7 +399,7 @@ export default function Products() {
                                 </p>
                               </div>
                             </div>
-                            <Button />
+                           
                           </div>
                         </div>
                       ))}

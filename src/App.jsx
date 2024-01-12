@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import Products from "./components/Product/Products";
 import Signin from "./components/Login/Signin.jsx";
 import Signup from "./components/Login/Signup.jsx"
+import Addto from "./components/addtocart/Addto.jsx";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/cart" element={<Addto />} />
             {/* Add a fallback route */}
           </Routes>
           <Footer />
