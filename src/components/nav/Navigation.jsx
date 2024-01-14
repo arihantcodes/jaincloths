@@ -490,7 +490,7 @@ export default function Navigation() {
                     to="/signup"
                     className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
-                   Create account
+                   Create Account
                   </Link>
                 </div>
 
@@ -505,7 +505,7 @@ export default function Navigation() {
                       className="block h-auto w-5 flex-shrink-0"
                     />
                     <span className="ml-3 block text-sm font-medium">INR</span>
-                    <span className="sr-only">, change currency</span>
+                    <span className="sr-only">, Change currency</span>
                   </a>
                 </div>
 
@@ -530,7 +530,7 @@ export default function Navigation() {
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
                       3
                     </span>
-                    <span className="sr-only">items in cart, view bag</span>
+                    <span className="sr-only">Items in cart, View bag</span>
                   </Link>
                 </div>
               </div>
