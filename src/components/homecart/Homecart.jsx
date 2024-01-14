@@ -43,7 +43,7 @@ const Homecart = ({ Men }) => {
     <>
   <div className="cursor-pointer flex-col flex items-center  w-[15rem] mx-5 bg-white rounded-lg shadow-lg overflow-hidden border">
     <div className="h-[13rem] w-[10rem] " onClick={handleView}>
-      {/* Ensure that Men is defined before accessing its properties */}
+     
       {Men && Men.image && (
         <img
           className="object-cover rounded-sm object-top w-full h-full"

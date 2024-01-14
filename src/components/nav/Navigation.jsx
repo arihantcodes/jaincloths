@@ -135,7 +135,6 @@ const navigation = {
   pages: [
     { name: "Home", to: "/" },
     { name: "New Arrivals", to: "/products" },
-   
   ],
 };
 
@@ -181,7 +180,7 @@ export default function Navigation() {
                     onClick={() => setOpen(false)}
                   >
                     <span className="absolute -inset-0.5" />
-                    <span className="sr-only">Close Menu</span>
+                    <span className="sr-only">Close menu</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
@@ -292,15 +291,15 @@ export default function Navigation() {
                       to="/signin"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
-                      Sign In
+                      Sign in
                     </Link>
                   </div>
                   <div className="flow-root">
-                  <Link
+                    <Link
                       to="/signup"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
-                      Create Account
+                      Create account
                     </Link>
                   </div>
                 </div>
@@ -315,7 +314,7 @@ export default function Navigation() {
                     <span className="ml-3 block text-base font-medium text-gray-900">
                       INR
                     </span>
-                    <span className="sr-only">, Change Currency</span>
+                    <span className="sr-only">, change currency</span>
                   </a>
                 </div>
               </Dialog.Panel>
@@ -323,10 +322,10 @@ export default function Navigation() {
           </div>
         </Dialog>
       </Transition.Root>
-                    {/* laptop */}
+      {/* laptop */}
       <header className="relative bg-white z-20 ">
         <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over Rs 499.
+          Get free delivery on orders over Rs 499
         </p>
 
         <nav
@@ -341,7 +340,7 @@ export default function Navigation() {
                 onClick={() => setOpen(true)}
               >
                 <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open Menu</span>
+                <span className="sr-only">Open menu</span>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </button>
 
@@ -356,6 +355,15 @@ export default function Navigation() {
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
                 <div className="flex h-full space-x-8">
+                  {navigation.pages.map((page) => (
+                    <Link
+                      key={page.name}
+                      to={page.to}
+                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                    >
+                      {page.name}
+                    </Link>
+                  ))}
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
                       {({ open }) => (
@@ -464,22 +472,12 @@ export default function Navigation() {
                       )}
                     </Popover>
                   ))}
-
-                  {navigation.pages.map((page) => (
-                    <Link
-                      key={page.name}
-                      to={page.to}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      {page.name}
-                    </Link>
-                  ))}
                 </div>
               </Popover.Group>
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                <Link
+                  <Link
                     to="/signin"
                     className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
@@ -490,7 +488,7 @@ export default function Navigation() {
                     to="/signup"
                     className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
-                   Create Account
+                    Create account
                   </Link>
                 </div>
 
@@ -505,7 +503,7 @@ export default function Navigation() {
                       className="block h-auto w-5 flex-shrink-0"
                     />
                     <span className="ml-3 block text-sm font-medium">INR</span>
-                    <span className="sr-only">, Change Currency</span>
+                    <span className="sr-only">, change currency</span>
                   </a>
                 </div>
 
@@ -530,7 +528,7 @@ export default function Navigation() {
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
                       3
                     </span>
-                    <span className="sr-only">Items in cart, View bag</span>
+                    <span className="sr-only">items in cart, view bag</span>
                   </Link>
                 </div>
               </div>
