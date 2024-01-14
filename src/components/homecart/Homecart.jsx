@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Overview from "./Overview";
-
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Store";
 const Homecart = ({ Men }) => {
   const handleView = () => {
     // Open a new window
@@ -31,7 +32,12 @@ const Homecart = ({ Men }) => {
     // Focus the new window
     newWindow.focus();
   };
-  
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(Men));
+  };
+
 
   return (
     <>
@@ -51,11 +57,11 @@ const Homecart = ({ Men }) => {
       {/* Check if Men is defined before accessing its properties */}
       {Men && (
         <>
-          <h3 className="text-lg font-medium text-gray-900 ">{Men.brand} </h3>
-          <p className="mt-2 text-sm font-normal text-gray-500 ">{Men.title}</p>
-          <h3 className="font-semibold text-lg">
+          <h3 className="text-lg font-medium text-center text-gray-900 ">{Men.brand} </h3>
+          <p className="mt-2 text-sm font-normal text-center text-gray-500 ">{Men.title}</p>
+          <h3 className="font-semibold text-lg text-center">
             ₹{Men.discountedPrice}
-            <span className="text-gray-500 ml-4 line-through ">
+            <span className="text-gray-500 ml-4 line-through text-center ">
               ₹{Men.price}
             </span>
           </h3>
@@ -64,10 +70,11 @@ const Homecart = ({ Men }) => {
     </div>
 
     <button
-      className="bg-indigo-700 rounded-md font-semibold font-sans mb-4 hover:bg-indigo-500 shadow-md text-white px-6 py-2 mt-1"
-    >
-      Add to Cart
-    </button>
+    className="bg-indigo-700 rounded-md font-semibold font-sans mb-4 hover:bg-indigo-500 shadow-md text-white px-6 py-2 mt-1"
+    onClick={handleAddToCart}
+  >
+    Add to Cart
+  </button>
   </div>
 </>
 

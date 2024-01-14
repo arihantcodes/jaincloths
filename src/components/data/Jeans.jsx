@@ -8,6 +8,7 @@ export const Dress=
         "discountedPrice": 449,
         "price": 2500,
         "discountPersent": 80,
+        id: 1,
         "size": [
             {
               "name": "S",
