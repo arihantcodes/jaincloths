@@ -181,7 +181,7 @@ export default function Navigation() {
                     onClick={() => setOpen(false)}
                   >
                     <span className="absolute -inset-0.5" />
-                    <span className="sr-only">Close menu</span>
+                    <span className="sr-only">Close Menu</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
@@ -292,7 +292,7 @@ export default function Navigation() {
                       to="/signin"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
-                      Sign in
+                      Sign In
                     </Link>
                   </div>
                   <div className="flow-root">
@@ -300,7 +300,7 @@ export default function Navigation() {
                       to="/signup"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
-                      Create account
+                      Create Account
                     </Link>
                   </div>
                 </div>
@@ -315,7 +315,7 @@ export default function Navigation() {
                     <span className="ml-3 block text-base font-medium text-gray-900">
                       INR
                     </span>
-                    <span className="sr-only">, change currency</span>
+                    <span className="sr-only">, Change Currency</span>
                   </a>
                 </div>
               </Dialog.Panel>
@@ -326,7 +326,7 @@ export default function Navigation() {
                     {/* laptop */}
       <header className="relative bg-white z-20 ">
         <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over Rs 499
+          Get free delivery on orders over Rs 499.
         </p>
 
         <nav
@@ -341,7 +341,7 @@ export default function Navigation() {
                 onClick={() => setOpen(true)}
               >
                 <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">Open Menu</span>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </button>
 
@@ -490,7 +490,7 @@ export default function Navigation() {
                     to="/signup"
                     className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
-                   Create account
+                   Create Account
                   </Link>
                 </div>
 
@@ -505,7 +505,7 @@ export default function Navigation() {
                       className="block h-auto w-5 flex-shrink-0"
                     />
                     <span className="ml-3 block text-sm font-medium">INR</span>
-                    <span className="sr-only">, change currency</span>
+                    <span className="sr-only">, Change Currency</span>
                   </a>
                 </div>
 
@@ -530,7 +530,7 @@ export default function Navigation() {
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
                       3
                     </span>
-                    <span className="sr-only">items in cart, view bag</span>
+                    <span className="sr-only">Items in cart, View bag</span>
                   </Link>
                 </div>
               </div>
