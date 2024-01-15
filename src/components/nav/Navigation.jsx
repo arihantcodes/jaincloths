@@ -350,13 +350,14 @@ export default function Navigation() {
               </button>
 
               {/* Logo */}
+              {!isInputVisible && (
               <div className="ml-4 flex lg:ml-0">
                 <Link to="/">
                   <span className="sr-only">Jain Cloths</span>
                   <img className="h-[85px] w-[90px]" src={Logo} alt="" />
                 </Link>
               </div>
-
+              )}
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
                 <div className="flex h-full space-x-8">
