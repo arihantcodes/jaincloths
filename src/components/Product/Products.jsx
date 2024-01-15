@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import React from "react";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {
@@ -9,77 +10,72 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
 import Productxyz from "../data/Productxyz";
-
-const sortOptions = [
-  { name: "Most Popular", href: "#", current: true },
-  { name: "Best Rating", href: "#", current: false },
-  { name: "Newest", href: "#", current: false },
-  { name: "Price: Low to High", href: "#", current: false },
-  { name: "Price: High to Low", href: "#", current: false },
-];
-const subCategories = [
-  { name: "Totes", href: "#" },
-  { name: "Backpacks", href: "#" },
-  { name: "Travel Bags", href: "#" },
-  { name: "Hip Bags", href: "#" },
-  { name: "Laptop Sleeves", href: "#" },
-];
-const filters = [
-  {
-    id: "color",
-    name: "Color",
-    options: [
-      { value: "white", label: "White", checked: false },
-      { value: "beige", label: "Beige", checked: false },
-      { value: "blue", label: "Blue", checked: true },
-      { value: "brown", label: "Brown", checked: false },
-      { value: "green", label: "Green", checked: false },
-      { value: "purple", label: "Purple", checked: false },
-    ],
-  },
-  {
-    id: "category",
-    name: "Category",
-    options: [
-      { value: "new-arrivals", label: "New Arrivals", checked: false },
-      { value: "sale", label: "Sale", checked: false },
-      { value: "travel", label: "Travel", checked: true },
-      { value: "organization", label: "Organization", checked: false },
-      { value: "accessories", label: "Accessories", checked: false },
-    ],
-  },
-  {
-    id: "size",
-    name: "Size",
-    options: [
-      { value: "2l", label: "2L", checked: false },
-      { value: "6l", label: "6L", checked: false },
-      { value: "12l", label: "12L", checked: false },
-      { value: "18l", label: "18L", checked: false },
-      { value: "20l", label: "20L", checked: false },
-      { value: "40l", label: "40L", checked: true },
-    ],
-  },
-];
-const products = [...Productxyz];
-
-products.map((product) => {
-  <div key={product.id} className="group relative"></div>;
-  // Accessing properties of each product
-  const image = product.image;
-  const brand = product.brand;
-  const title = product.title;
-  const discountedPrice = product.discountedPrice;
-  const price = product.price;
-
-  const id = product.id;
-});
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Store";
 
 export default function Products() {
+  const dispatch = useDispatch();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+
+  const sortOptions = [
+    { name: "Most Popular", href: "#", current: true },
+    { name: "Best Rating", href: "#", current: false },
+    { name: "Newest", href: "#", current: false },
+    { name: "Price: Low to High", href: "#", current: false },
+    { name: "Price: High to Low", href: "#", current: false },
+  ];
+
+  const subCategories = [
+    { name: "Totes", href: "#" },
+    { name: "Backpacks", href: "#" },
+    { name: "Travel Bags", href: "#" },
+    { name: "Hip Bags", href: "#" },
+    { name: "Laptop Sleeves", href: "#" },
+  ];
+
+  const filters = [
+    {
+      id: "color",
+      name: "Color",
+      options: [
+        { value: "white", label: "White", checked: false },
+        { value: "beige", label: "Beige", checked: false },
+        { value: "blue", label: "Blue", checked: true },
+        { value: "brown", label: "Brown", checked: false },
+        { value: "green", label: "Green", checked: false },
+        { value: "purple", label: "Purple", checked: false },
+      ],
+    },
+    {
+      id: "category",
+      name: "Category",
+      options: [
+        { value: "new-arrivals", label: "New Arrivals", checked: false },
+        { value: "sale", label: "Sale", checked: false },
+        { value: "travel", label: "Travel", checked: true },
+        { value: "organization", label: "Organization", checked: false },
+        { value: "accessories", label: "Accessories", checked: false },
+      ],
+    },
+    {
+      id: "size",
+      name: "Size",
+      options: [
+        { value: "2l", label: "2L", checked: false },
+        { value: "6l", label: "6L", checked: false },
+        { value: "12l", label: "12L", checked: false },
+        { value: "18l", label: "18L", checked: false },
+        { value: "20l", label: "20L", checked: false },
+        { value: "40l", label: "40L", checked: true },
+      ],
+    },
+  ];
+
+  const products = [...Productxyz];
 
   return (
     <div className="bg-white">
@@ -365,47 +361,58 @@ export default function Products() {
                       Featured Products
                     </h2>
 
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8 ">
-                      {products.map((product) => (
-                        <div
-                          key={product.id}
-                          className="group relative border-2 overflow-hidden shadow-md shadow-slate-200"
-                        >
-                          <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75">
-                            <img
-                              src={product.image}
-                              alt={product.imageAlt}
-                              className="object-cover object-center w-full h-[368px]"
-                            />
-                          </div>
-                          <div className="mt-4 ml-6 flex flex-col justify-between">
-                            <div>
-                              <h3 className="text-md font-semibold text-gray-500">
-                                {product.brand}
-                                <br />
-                                <a
-                                  href="#"
-                                  className="group-hover:underline text-gray-900"
-                                >
-                                  {product.title}
-                                </a>
-                              </h3>
-                              <div className="flex items-center gap-4 mt-2">
-                                <p className="text-md text-gray-900 font-semibold">
-                                  ₹{product.discountedPrice}
-                                </p>
-                                <p className="text-md text-gray-500 line-through">
-                                  ₹{product.price}
-                                </p>
-                              </div>
-                              <button className="bg-indigo-700 rounded-md font-semibold font-sans mb-4 hover:bg-indigo-500 shadow-md text-white px-8 py-2 mt-3">
-                              Add to Cart
-                            </button>
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+                      {products.map((product) => {
+                        const image = product.image;
+                        const brand = product.brand;
+                        const title = product.title;
+                        const discountedPrice = product.discountedPrice;
+                        const price = product.price;
+                        const id = product.id;
+
+                        return (
+                          <div
+                            key={id}
+                            className="group relative border-2 overflow-hidden shadow-md shadow-slate-200"
+                          >
+                            <div className="aspect-w-1 aspect-h-1 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75">
+                              <img
+                                src={product.image}
+                                alt={product.imageAlt}
+                                className="object-cover object-center w-full h-[368px]"
+                              />
                             </div>
-                          
+                            <div className="mt-4 ml-6 flex flex-col justify-between">
+                              <div className="text-center">
+                                <h3 className="text-md font-semibold text-gray-500">
+                                  {product.brand}
+                                  <br />
+                                  <a
+                                    href="#"
+                                    className=" text-gray-900"
+                                  >
+                                    {product.title}
+                                  </a>
+                                </h3>
+                                <div className="flex text-center items gap-4 mt-2">
+                                  <p className="text-md  text-gray-900 font-semibold">
+                                    ₹{product.discountedPrice}
+                                  </p>
+                                  <p className="text-md text-gray-500 line-through">
+                                    ₹{product.price}
+                                  </p>
+                                </div>
+                              </div>
+                              <button
+                                onClick={() => handleAddToCart(product)}
+                                className="bg-indigo-700 rounded-md font-semibold font-sans mb-4 hover:bg-indigo-500 shadow-md text-white px-8 py-2 mt-3"
+                              >
+                                Add to Cart
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
