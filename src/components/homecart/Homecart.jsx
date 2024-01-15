@@ -4,6 +4,7 @@ import Overview from "./Overview";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Store";
 const Homecart = ({ Men }) => {
+  
   const handleView = () => {
     // Open a new window
     const newWindow = window.open("", "_blank");

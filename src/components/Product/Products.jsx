@@ -361,7 +361,7 @@ export default function Products() {
                       Featured Products
                     </h2>
 
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:gap-8">
                       {products.map((product) => {
                         const image = product.image;
                         const brand = product.brand;
@@ -382,8 +382,8 @@ export default function Products() {
                                 className="object-cover object-center w-full h-[368px]"
                               />
                             </div>
-                            <div className="mt-4 ml-6 flex flex-col justify-between">
-                              <div className="text-center">
+                            <div className=" mt-4 ml-6 flex flex-col justify-between">
+                              <div>
                                 <h3 className="text-md font-semibold text-gray-500">
                                   {product.brand}
                                   <br />
@@ -394,18 +394,18 @@ export default function Products() {
                                     {product.title}
                                   </a>
                                 </h3>
-                                <div className="flex text-center items gap-4 mt-2">
-                                  <p className="text-md  text-gray-900 font-semibold">
+                                <div className="flex  items gap-4 mt-2">
+                                  <h4 className="text-md  text-gray-900 font-semibold">
                                     ₹{product.discountedPrice}
-                                  </p>
-                                  <p className="text-md text-gray-500 line-through">
+                                  </h4>
+                                  <h4 className="text-md text-gray-500 line-through">
                                     ₹{product.price}
-                                  </p>
+                                  </h4>
                                 </div>
                               </div>
                               <button
                                 onClick={() => handleAddToCart(product)}
-                                className="bg-indigo-700 rounded-md font-semibold font-sans mb-4 hover:bg-indigo-500 shadow-md text-white px-8 py-2 mt-3"
+                                className="bg-indigo-700 rounded-md mr-4 font-semibold font-sans mb-4 hover:bg-indigo-500 shadow-md text-white px-8 py-2 mt-3"
                               >
                                 Add to Cart
                               </button>

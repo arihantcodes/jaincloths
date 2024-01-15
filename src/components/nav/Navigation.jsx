@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { Dialog, Popover, Tab,Menu, Transition } from "@headlessui/react";
+import { Dialog, Popover, Tab, Menu, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   MagnifyingGlassIcon,
@@ -9,6 +9,7 @@ import {
 import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 const navigation = {
+  
   categories: [
     {
       id: "women",
@@ -16,7 +17,7 @@ const navigation = {
       featured: [
         {
           name: "New Arrivals",
-          href: "#",
+          to: "/products",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
           imageAlt:
@@ -24,7 +25,7 @@ const navigation = {
         },
         {
           name: "Basic Tees",
-          href: "#",
+          to: "#",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
           imageAlt:
@@ -35,39 +36,40 @@ const navigation = {
         {
           id: "clothing",
           name: "Clothing",
+          
           items: [
-            { name: "Tops", href: "#" },
-            { name: "Dresses", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Denim", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
+            { name: "Saree", to: "/saree" },
+            { name: "Dresses", to: "dress" },
+            { name: "Pants", to: "/pants" },
+            { name: "Denim", to: "#" },
+            { name: "Sweaters", to: "#" },
+            { name: "T-Shirts", to: "#" },
+            { name: "Jackets", to: "#" },
+            { name: "Activewear", to: "#" },
+            { name: "Browse All", to: "#" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
+            { name: "Watches", to: "#" },
+            { name: "Wallets", to: "#" },
+            { name: "Bags", to: "#" },
+            { name: "Sunglasses", to: "#" },
+            { name: "Hats", to: "#" },
+            { name: "Belts", to: "#" },
           ],
         },
         {
           id: "brands",
           name: "Brands",
           items: [
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Significant Other", href: "#" },
+            { name: "Full Nelson", to: "#" },
+            { name: "My Way", to: "#" },
+            { name: "Re-Arranged", to: "#" },
+            { name: "Counterfeit", to: "#" },
+            { name: "Significant Other", to: "#" },
           ],
         },
       ],
@@ -78,7 +80,7 @@ const navigation = {
       featured: [
         {
           name: "New Arrivals",
-          href: "#",
+          to: "#",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
           imageAlt:
@@ -86,7 +88,7 @@ const navigation = {
         },
         {
           name: "Artwork Tees",
-          href: "#",
+          to: "#",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
           imageAlt:
@@ -98,35 +100,35 @@ const navigation = {
           id: "clothing",
           name: "Clothing",
           items: [
-            { name: "Tops", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
+            { name: "Tops", to: "#" },
+            { name: "Pants", to: "/signup" },
+            { name: "Sweaters", to: "#" },
+            { name: "T-Shirts", to: "#" },
+            { name: "Jackets", to: "#" },
+            { name: "Activewear", to: "#" },
+            { name: "Browse All", to: "#" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
+            { name: "Watches", to: "#" },
+            { name: "Wallets", to: "#" },
+            { name: "Bags", to: "#" },
+            { name: "Sunglasses", to: "#" },
+            { name: "Hats", to: "#" },
+            { name: "Belts", to: "#" },
           ],
         },
         {
           id: "brands",
           name: "Brands",
           items: [
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
+            { name: "Re-Arranged", to: "#" },
+            { name: "Counterfeit", to: "#" },
+            { name: "Full Nelson", to: "#" },
+            { name: "My Way", to: "#" },
           ],
         },
       ],
@@ -136,6 +138,7 @@ const navigation = {
     { name: "Home", to: "/" },
     { name: "New Arrivals", to: "/products" },
   ],
+  
 };
 
 function classNames(...classes) {
@@ -144,7 +147,11 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const [isInputVisible, setIsInputVisible] = useState(false);
 
+  const handleSearchClick = () => {
+    setIsInputVisible(!isInputVisible);
+  };
   return (
     <div className="bg-white z-30 ">
       {/* Mobile menu */}
@@ -225,8 +232,8 @@ export default function Navigation() {
                                   className="object-cover object-center"
                                 />
                               </div>
-                              <a
-                                href={item.href}
+                              <Link
+                                to={item.to}
                                 className="mt-6 block font-medium text-gray-900"
                               >
                                 <span
@@ -234,7 +241,7 @@ export default function Navigation() {
                                   aria-hidden="true"
                                 />
                                 {item.name}
-                              </a>
+                              </Link>
                               <p aria-hidden="true" className="mt-1">
                                 Shop now
                               </p>
@@ -256,12 +263,12 @@ export default function Navigation() {
                             >
                               {section.items.map((item) => (
                                 <li key={item.name} className="flow-root">
-                                  <a
-                                    href={item.href}
+                                  <Link
+                                    to={item.to}
                                     className="-m-2 block p-2 text-gray-500"
                                   >
                                     {item.name}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -305,7 +312,7 @@ export default function Navigation() {
                 </div>
 
                 <div className="border-t border-gray-200 px-4 py-6">
-                  <a href="#" className="-m-2 flex items-center p-2">
+                  <a to="#" className="-m-2 flex items-center p-2">
                     <img
                       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN0AAACUCAMAAAAgTdyMAAAAkFBMVEX/mTMSiAf/////khbJ28cAfQD/4s0AAIDw8PcAAIX29voAAIji4u/8/P3p6fIAAHvKyuF9fbfS0uZYWKQkJI+VlcCvr9BlZay6utZ2dq13d7U3N5inp8k+PpUAAHaTk8ImJopMTJ6IiLagoMgWFo6NjcAwMJRsbKhQUJwWFoZqaqyDg7ZkZJ0fH5AyMowzM4K07MbvAAADLUlEQVR4nO2afW+bMBCHs9uLjWvAmGAcCiFA06QlXb7/t5vJ2mma2v9qJlu/R4oISSTzCHN3PmezAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACfyteY2fyImQ3FDOzCBXafQ6qqphzKplLpamOuZJeZ+/0+Zwv5fn9vsnWGXcVOtltntt0mp/nkDs7wpZVrDLyGnT27W9a1ylZc8sqqtnPnZ7PCyCvYNU9s/1z3JCkl616S+vp5z54a/0N7txOlm5NKuHfLzZpej0K5+VkK34P7tuM1S4ZZaE6kNVH/+8C1mIeE1dzz6J7t0oLlo8xIWKfk1J6doFOygqQcc1Z4Tg6e7VrGCr6ER6VIFET3RIVYTlwg5QVjrd/h/dplecJOJJ1M1vO01/STdJ/y3qU7JenEktxv4vNrV7NuchNRuUDStmQnutJkl7dkl6k6daz2Or5XO3VIKr48WmYiMUi9E1e+03IQNC2BM+VVclA+L8Cr3cgOOr09ZNNI5pIN+qqH7GJoXDKDUqk+sNHnBfi0k13CJkp148JKtRPbfmeuZtdv07lyXzY6pYklnc+SzKedZflt3vGikXy8qEtvr7a/qNPMZdPccp3KmfV4BR7t0oo9uLS2FCT2PNp5ngpb22KaZzueFychJT2wymPO82gnahcRM22PrXbhcTi2synKwsxtP7hAKs3RuDTvfuOxHvNoxx+T3D1UIrPloZx0VdqOJayzZaVb94nNnJbMk0eP5ZhHu8wVkm+zzpTXQp3Z3d0dO6v5Wr4tf1JXhnpM6D7tWK6F1Mpa0xrTVseXxNklL8dqMssnVmnJdc6isttGYvf+zCzjmJlxR5W4M0Lc2fzjSmzksgi9Eou8io57BfTe6lX8tXqlsFev/3QezK3zYP50HrKwOw+Rd43i7vi9dmtlpN3aW6e9i7XTHvkuCcW9w0Uf7U76rMDeWHVnmcW4s0xx/yvgRsT/6PhPwC5cIrf7FjOb7zGz+RIzsAsX2IUL7MIFduECu3CBXbjALlxgFy6wCxfYhQvswgV24QK7cIFduMAuXGAXLrALF9iFC+zCBXbhArtwgV24wC5c4rb7Bb3U1zyAE/jsAAAAAElFTkSuQmCC"
                       alt=""
@@ -346,10 +353,10 @@ export default function Navigation() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <Link to="/">
                   <span className="sr-only">Jain Cloths</span>
                   <img className="h-[85px] w-[90px]" src={Logo} alt="" />
-                </a>
+                </Link>
               </div>
 
               {/* Flyout menus */}
@@ -400,7 +407,7 @@ export default function Navigation() {
                               <div className="relative bg-white">
                                 <div className="mx-auto max-w-7xl px-8">
                                   <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
-                                    <div className="col-start-2 grid grid-cols-2 gap-x-8">
+                                    <div className="col-start-2  grid grid-cols-2 gap-x-8">
                                       {category.featured.map((item) => (
                                         <div
                                           key={item.name}
@@ -413,16 +420,16 @@ export default function Navigation() {
                                               className="object-cover object-center"
                                             />
                                           </div>
-                                          <a
-                                            href={item.href}
-                                            className="mt-6 block font-medium text-gray-900"
+                                          <Link
+                                            to={item.to}
+                                            className="cursor-pointer mt-6 block font-medium text-gray-900"
                                           >
                                             <span
                                               className="absolute inset-0 z-10"
                                               aria-hidden="true"
                                             />
                                             {item.name}
-                                          </a>
+                                          </Link>
                                           <p
                                             aria-hidden="true"
                                             className="mt-1"
@@ -451,12 +458,12 @@ export default function Navigation() {
                                                 key={item.name}
                                                 className="flex"
                                               >
-                                                <a
-                                                  href={item.href}
+                                                <Link
+                                                  to={item.to}
                                                   className="hover:text-gray-800"
                                                 >
                                                   {item.name}
-                                                </a>
+                                                </Link>
                                               </li>
                                             ))}
                                           </ul>
@@ -516,8 +523,11 @@ export default function Navigation() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            to="#"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
                           >
                             Your Profile
                           </a>
@@ -526,8 +536,11 @@ export default function Navigation() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            to="#"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
                           >
                             Settings
                           </a>
@@ -535,42 +548,40 @@ export default function Navigation() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          <Link
+                            to="/"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
                           >
                             Sign out
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </Menu>
 
-                <div className="hidden lg:ml-8 lg:flex">
-                  <a
-                    href="#"
-                    className="flex items-center text-gray-700 hover:text-gray-800"
-                  >
-                    <img
-                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN0AAACUCAMAAAAgTdyMAAAAkFBMVEX/mTMSiAf/////khbJ28cAfQD/4s0AAIDw8PcAAIX29voAAIji4u/8/P3p6fIAAHvKyuF9fbfS0uZYWKQkJI+VlcCvr9BlZay6utZ2dq13d7U3N5inp8k+PpUAAHaTk8ImJopMTJ6IiLagoMgWFo6NjcAwMJRsbKhQUJwWFoZqaqyDg7ZkZJ0fH5AyMowzM4K07MbvAAADLUlEQVR4nO2afW+bMBCHs9uLjWvAmGAcCiFA06QlXb7/t5vJ2mma2v9qJlu/R4oISSTzCHN3PmezAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACfyteY2fyImQ3FDOzCBXafQ6qqphzKplLpamOuZJeZ+/0+Zwv5fn9vsnWGXcVOtltntt0mp/nkDs7wpZVrDLyGnT27W9a1ylZc8sqqtnPnZ7PCyCvYNU9s/1z3JCkl616S+vp5z54a/0N7txOlm5NKuHfLzZpej0K5+VkK34P7tuM1S4ZZaE6kNVH/+8C1mIeE1dzz6J7t0oLlo8xIWKfk1J6doFOygqQcc1Z4Tg6e7VrGCr6ER6VIFET3RIVYTlwg5QVjrd/h/dplecJOJJ1M1vO01/STdJ/y3qU7JenEktxv4vNrV7NuchNRuUDStmQnutJkl7dkl6k6daz2Or5XO3VIKr48WmYiMUi9E1e+03IQNC2BM+VVclA+L8Cr3cgOOr09ZNNI5pIN+qqH7GJoXDKDUqk+sNHnBfi0k13CJkp148JKtRPbfmeuZtdv07lyXzY6pYklnc+SzKedZflt3vGikXy8qEtvr7a/qNPMZdPccp3KmfV4BR7t0oo9uLS2FCT2PNp5ngpb22KaZzueFychJT2wymPO82gnahcRM22PrXbhcTi2synKwsxtP7hAKs3RuDTvfuOxHvNoxx+T3D1UIrPloZx0VdqOJayzZaVb94nNnJbMk0eP5ZhHu8wVkm+zzpTXQp3Z3d0dO6v5Wr4tf1JXhnpM6D7tWK6F1Mpa0xrTVseXxNklL8dqMssnVmnJdc6isttGYvf+zCzjmJlxR5W4M0Lc2fzjSmzksgi9Eou8io57BfTe6lX8tXqlsFev/3QezK3zYP50HrKwOw+Rd43i7vi9dmtlpN3aW6e9i7XTHvkuCcW9w0Uf7U76rMDeWHVnmcW4s0xx/yvgRsT/6PhPwC5cIrf7FjOb7zGz+RIzsAsX2IUL7MIFduECu3CBXbjALlxgFy6wCxfYhQvswgV24QK7cIFduMAuXGAXLrALF9iFC+zCBXbhArtwgV24wC5c4rb7Bb3U1zyAE/jsAAAAAElFTkSuQmCC"
-                      alt=""
-                      className="block h-auto w-5 flex-shrink-0"
-                    />
-                    <span className="ml-3 block text-sm font-medium">INR</span>
-                    <span className="sr-only">, change currency</span>
-                  </a>
-                </div>
-
-                {/* Search */}
                 <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
+                  <a
+                    to="#"
+                    className="p-2 text-gray-400 hover:text-gray-500"
+                    onClick={handleSearchClick}
+                  >
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon
                       className="h-6 w-6"
                       aria-hidden="true"
                     />
                   </a>
+                  {isInputVisible && (
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      className="border rounded-md p-2 ml-2 focus:outline-none focus:ring focus:border-blue-300"
+                    />
+                  )}
                 </div>
 
                 {/* Cart */}
@@ -580,7 +591,7 @@ export default function Navigation() {
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                    <span className=" hidden lg:flex ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
                       CART
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
