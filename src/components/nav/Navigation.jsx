@@ -9,7 +9,6 @@ import {
 import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 const navigation = {
-  
   categories: [
     {
       id: "women",
@@ -36,7 +35,7 @@ const navigation = {
         {
           id: "clothing",
           name: "Clothing",
-          
+
           items: [
             { name: "Saree", to: "/saree" },
             { name: "Dresses", to: "dress" },
@@ -138,7 +137,6 @@ const navigation = {
     { name: "Home", to: "/" },
     { name: "New Arrivals", to: "/products" },
   ],
-  
 };
 
 function classNames(...classes) {
@@ -498,7 +496,6 @@ export default function Navigation() {
                     Create account
                   </Link>
                 </div>
-                
 
                 <div className="flex lg:ml-6">
                   <a
@@ -516,7 +513,8 @@ export default function Navigation() {
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="border rounded-md p-2 ml-2 focus:outline-none focus:ring focus:border-blue-300"
+                      className="border rounded-md p-2 ml-2 focus:outline-none focus:ring focus:border-blue-300 
+                  lg:ml-2 lg:w-48 xl:w-64"
                     />
                   )}
                 </div>
