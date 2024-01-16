@@ -1,4 +1,4 @@
-// store.js
+
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({

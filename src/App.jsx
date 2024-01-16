@@ -28,6 +28,7 @@ function App() {
             <Route path="/pants" element={<Cloths />} />
             <Route path="/dress" element={<Dress2 />} />
             <Route path="/saree" element={<Saree />} />
+           
             {/* Add a fallback route */}
           </Routes>
           <Footer />
